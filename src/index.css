@@ -25,10 +25,12 @@
     /* Shadows */
     --shadow-glow: 0 0 40px rgba(6, 182, 212, 0.25);
     --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.25);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
 
     /* Radius */
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
 
     /* Typography */
     --font-sans: "Inter", sans-serif;
@@ -89,12 +91,12 @@
     }
 
     .section-padding {
-        padding-block: 6rem;
+        padding-block: 4rem;
     }
 
     @media (min-width: 768px) {
         .section-padding {
-            padding-block: 8rem;
+            padding-block: 6rem;
         }
     }
 
@@ -105,21 +107,15 @@
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-
         padding: 0.85rem 1.75rem;
-
         border-radius: 9999px;
-
         font-weight: 600;
-
         color: white;
-
         background: linear-gradient(
             135deg,
             var(--color-primary),
             var(--color-accent)
         );
-
         transition: all 0.3s ease;
     }
 
@@ -132,13 +128,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-
         padding: 0.85rem 1.75rem;
-
         border-radius: 9999px;
-
         border: 1px solid var(--color-border);
-
         transition: 0.3s ease;
     }
 
@@ -150,11 +142,8 @@
 
     .glass-navbar {
         background: rgba(7, 20, 38, 0.72);
-
         backdrop-filter: blur(18px);
-
         border-bottom: 1px solid var(--color-border);
-
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
@@ -165,9 +154,13 @@
 
     .glass-card {
         background: rgba(255, 255, 255, 0.04);
-
         backdrop-filter: blur(16px);
+        border: 1px solid var(--color-border);
+    }
 
+    .glass-surface {
+        background: rgba(11, 30, 51, 0.7);
+        backdrop-filter: blur(18px);
         border: 1px solid var(--color-border);
     }
 
@@ -175,26 +168,72 @@
 
     .heading-xl {
         font-size: clamp(3rem, 6vw, 4.5rem);
-
         font-weight: 700;
-
         line-height: 1.1;
     }
 
     .heading-lg {
         font-size: clamp(2.25rem, 4vw, 3.5rem);
-
         font-weight: 700;
-
         line-height: 1.15;
     }
 
     .body-text {
         color: var(--color-text-secondary);
-
         font-size: 1.125rem;
-
         line-height: 1.9;
+    }
+
+    /* ---------- Section Typography ---------- */
+
+    .section-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1.25rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(34, 211, 238, 0.4);
+        background: rgba(34, 211, 238, 0.08);
+        color: var(--color-primary-light);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+    }
+
+    .section-title {
+        font-size: clamp(2.25rem, 4vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.15;
+        text-wrap: balance;
+    }
+
+    .section-subtitle {
+        color: var(--color-text-secondary);
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+    }
+
+    .section-description {
+        max-width: 42rem;
+        margin-top: 1.5rem;
+        color: var(--color-text-secondary);
+        font-size: 1.125rem;
+        line-height: 1.9;
+    }
+
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-header-left {
+        align-items: flex-start;
+        text-align: left;
     }
 }
 
@@ -234,7 +273,6 @@
 
     .card-hover:hover {
         transform: translateY(-8px);
-
         box-shadow: var(--shadow-card);
     }
 
@@ -253,29 +291,22 @@
         left: 8%;
         width: 120px;
         height: 120px;
-
         border: 1px solid rgba(6, 182, 212, 0.18);
-
         box-shadow:
             0 0 25px rgba(6, 182, 212, 0.15),
             inset 0 0 25px rgba(6, 182, 212, 0.06);
-
         animation-duration: 18s;
     }
 
     .ring-2 {
         top: 52%;
         left: 5%;
-
         width: 70px;
         height: 70px;
-
         border: 1px solid rgba(59, 130, 246, 0.2);
-
         box-shadow:
             0 0 18px rgba(59, 130, 246, 0.18),
             inset 0 0 18px rgba(59, 130, 246, 0.05);
-
         animation-duration: 14s;
         animation-direction: reverse;
     }
@@ -283,34 +314,38 @@
     .ring-3 {
         top: 22%;
         right: 12%;
-
         width: 90px;
         height: 90px;
-
         border: 1px solid rgba(6, 182, 212, 0.15);
-
         box-shadow:
             0 0 20px rgba(6, 182, 212, 0.12),
             inset 0 0 20px rgba(6, 182, 212, 0.05);
-
         animation-duration: 20s;
     }
 
     .ring-4 {
         bottom: 22%;
         left: 52%;
-
         width: 110px;
         height: 110px;
-
         border: 1px solid rgba(59, 130, 246, 0.15);
-
         box-shadow:
             0 0 24px rgba(59, 130, 246, 0.1),
             inset 0 0 24px rgba(59, 130, 246, 0.04);
 
         animation-duration: 22s;
         animation-direction: reverse;
+    }
+
+    .animate-scroll {
+        display: flex;
+        width: max-content;
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+    }
+
+    .animate-scroll:hover {
+        animation-play-state: paused;
     }
 }
 
@@ -333,5 +368,15 @@
 
     100% {
         transform: translateY(0px) rotate(360deg);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
     }
 }

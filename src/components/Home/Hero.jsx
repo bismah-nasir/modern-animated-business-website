@@ -334,7 +334,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-0 left-1/2 z-20 hidden lg:flex -translate-x-1/2 flex-col items-center gap-1 text-text-secondary">
+                className="absolute bottom-0 left-1/2 z-20 hidden xl:flex -translate-x-1/2 flex-col items-center gap-1 text-text-secondary">
                 <span className="text-xs uppercase tracking-[0.35em]">
                     Scroll
                 </span>
