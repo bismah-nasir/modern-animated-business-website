@@ -4,6 +4,7 @@ import Companies from "./Home/Companies";
 import Services from "./Home/Services";
 import WhyChooseUs from "./Home/WhyChooseUs";
 import Stats from "./Home/Stats";
+import Portfolio from "./Home/Portfolio";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Services />
             <WhyChooseUs />
             <Stats />
+            <Portfolio />
         </main>
     );
 };
