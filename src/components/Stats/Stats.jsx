@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { stats } from "../../data/stats";
+import { stats } from "./stats";
 import StatsCard from "./StatsCard";
 
 const Stats = () => {

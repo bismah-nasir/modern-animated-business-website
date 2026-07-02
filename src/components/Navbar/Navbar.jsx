@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 
-import { navLinks } from "../data/navigation";
+import { navLinks } from "./navigation";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);

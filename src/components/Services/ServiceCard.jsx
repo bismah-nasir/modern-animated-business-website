@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 
-const ServicesCard = ({ service, index }) => {
+const ServiceCard = ({ service, index }) => {
     const Icon = service.icon;
 
     return (
@@ -79,4 +79,4 @@ const ServicesCard = ({ service, index }) => {
     );
 };
 
-export default ServicesCard;
+export default ServiceCard;
