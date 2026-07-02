@@ -347,6 +347,18 @@
     .animate-scroll:hover {
         animation-play-state: paused;
     }
+
+    .footer-gradient {
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            #3b82f6 20%,
+            #06b6d4 40%,
+            #8b5cf6 60%,
+            #3b82f6 80%,
+            transparent 100%
+        );
+    }
 }
 
 @keyframes ringFloat {

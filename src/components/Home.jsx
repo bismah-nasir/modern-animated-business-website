@@ -6,6 +6,7 @@ import WhyChooseUs from "./Home/WhyChooseUs";
 import Stats from "./Home/Stats";
 import Portfolio from "./Home/Portfolio";
 import Testimonials from "./Home/Testimonials";
+import CTA from "./Home/CTA";
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Stats />
             <Portfolio />
             <Testimonials />
+            <CTA />
         </main>
     );
 };

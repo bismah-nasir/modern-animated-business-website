@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Footer from "./components/Home/Footer";
 
 function App() {
     return (
@@ -55,6 +56,8 @@ function App() {
                     }
                 />
             </Routes>
+
+            <Footer />
         </>
     );
 }
