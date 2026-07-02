@@ -1,4 +1,4 @@
-import { companies } from "../../data/companies";
+import { companies } from "./companies";
 import { motion } from "framer-motion";
 
 const Companies = () => {

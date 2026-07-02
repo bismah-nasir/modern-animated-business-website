@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { whyChooseUs } from "../../data/whyChooseUs";
+import { whyChooseUs } from "./whyChooseUs";
 import WhyChooseUsCard from "./WhyChooseUsCard";
 import CodeSnippet from "./CodeSnippet";
 

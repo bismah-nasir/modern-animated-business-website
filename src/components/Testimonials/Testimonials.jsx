@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { testimonials } from "../../data/testimonials";
+import { testimonials } from "./testimonials";
 import TestimonialCard from "./TestimonialCard";
 
 const Testimonials = () => {

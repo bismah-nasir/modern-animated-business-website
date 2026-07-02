@@ -9,7 +9,7 @@ import {
     socialLinks,
     contactInfo,
     legalLinks,
-} from "../../data/footer";
+} from "./footer";
 
 const containerVariants = {
     hidden: {},

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-import { portfolio } from "../../data/portfolio";
+import { portfolio } from "./portfolio";
 import PortfolioCard from "./PortfolioCard";
 
 const Portfolio = () => {
