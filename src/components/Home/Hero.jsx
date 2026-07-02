@@ -37,7 +37,7 @@ const floatingCards = [
 
 const Hero = () => {
     return (
-        <section className="relative isolate flex flex-col min-h-screen items-center overflow-hidden pt-20 pb-32">
+        <section className="relative isolate flex flex-col justify-center items-center overflow-hidden h-auto min-h-screen lg:h-screen bg-background px-4 sm:px-6 lg:px-8">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Grid */}
@@ -77,7 +77,7 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute -right-45 top-[10%] h-120 w-120 rounded-full bg-blue-600/15 blur-[140px]"
+                    className="absolute -right-25 top-[10%] h-80 w-80 rounded-full bg-purple-600/15 blur-[140px]"
                 />
 
                 {/* Bottom Blob */}
@@ -112,11 +112,8 @@ const Hero = () => {
                 {/* Rotating Rings */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <div className="ring ring-1"></div>
-
                     <div className="ring ring-2"></div>
-
                     <div className="ring ring-3"></div>
-
                     <div className="ring ring-4"></div>
                 </div>
 
@@ -151,41 +148,27 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
             </div>
 
-            <div className="container-width relative z-10">
+            <div className="container-width relative z-10 w-full py-12 lg:py-0">
                 {/* Hero Content */}
-                <div className="grid items-center gap-16 lg:grid-cols-2">
+                <div className="grid items-center gap-10 lg:grid-cols-2">
                     {/* Left Content */}
-
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="text-center lg:text-left">
+                        className="text-center lg:text-left flex flex-col justify-center">
                         <motion.span
-                            whileHover={{
-                                scale: 1.05,
-                            }}
-                            transition={{
-                                duration: 0.2,
-                            }}
-                            className="mb-6 inline-flex items-center rounded-full border border-primary-light/40 bg-primary-light/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-primary-light">
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.2 }}
+                            className="mb-4 self-center lg:self-start inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light backdrop-blur-xs">
                             AI Powered Digital Agency
                         </motion.span>
 
                         <motion.h1
-                            initial={{
-                                opacity: 0,
-                                y: 25,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            transition={{
-                                duration: 0.7,
-                                delay: 0.2,
-                            }}
-                            className="heading-xl max-w-3xl">
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: 0.1 }}
+                            className="heading-xl max-w-2xl text-white font-bold tracking-tight leading-[1.15] text-4xl sm:text-5xl lg:text-6xl">
                             Building Digital
                             <br />
                             <span className="gradient-text">Experiences</span>
@@ -194,19 +177,10 @@ const Hero = () => {
                         </motion.h1>
 
                         <motion.p
-                            initial={{
-                                opacity: 0,
-                                y: 20,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            transition={{
-                                delay: 0.4,
-                                duration: 0.7,
-                            }}
-                            className="body-text mx-auto mt-8 max-w-xl lg:mx-0">
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.7 }}
+                            className="body-text mx-auto mt-5 max-w-lg lg:mx-0 text-text-secondary text-base leading-relaxed font-normal">
                             We craft cutting-edge software solutions that
                             transform businesses. From AI automation to stunning
                             web applications, we turn ambitious ideas into
@@ -214,25 +188,15 @@ const Hero = () => {
                         </motion.p>
 
                         {/* CTA */}
-
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                y: 20,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            transition={{
-                                delay: 0.6,
-                                duration: 0.7,
-                            }}
-                            className="mt-10 flex flex-col items-center gap-5 sm:flex-row lg:justify-start">
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3, duration: 0.7 }}
+                            className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
                             <Link to="/contact" className="btn-primary group">
                                 Get Started
                                 <ArrowRight
-                                    size={18}
+                                    size={16}
                                     className="transition-transform duration-300 group-hover:translate-x-1"
                                 />
                             </Link>
@@ -243,20 +207,19 @@ const Hero = () => {
                         </motion.div>
 
                         {/* Social Proof */}
-
-                        <div className="mt-12 flex flex-col items-center gap-5 sm:flex-row lg:justify-start">
-                            <div className="flex -space-x-3">
+                        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start ">
+                            <div className="flex -space-x-2.5">
                                 {["A", "B", "C", "D"].map((letter) => (
                                     <div
                                         key={letter}
-                                        className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-background bg-slate-700 font-semibold text-white">
+                                        className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-background bg-slate-700 text-sm font-semibold text-white shadow-md">
                                         {letter}
                                     </div>
                                 ))}
                             </div>
 
-                            <p className="text-sm text-text-secondary">
-                                <span className="font-semibold text-white">
+                            <p className="text-sm text-text-secondary tracking-wide">
+                                <span className="font-bold text-white text-sm">
                                     180+
                                 </span>{" "}
                                 happy clients worldwide
@@ -265,29 +228,26 @@ const Hero = () => {
                     </motion.div>
 
                     {/* Right Content */}
-
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative flex justify-center">
-                        <div className="relative w-full max-w-155">
+                        className="relative flex justify-center items-center lg:w-full">
+                        <div className="relative w-full max-w-135 aspect-square lg:aspect-auto">
                             {/* Main Image */}
                             <motion.div
                                 whileHover={{
-                                    scale: 1.02,
-                                    rotate: -0.4,
+                                    scale: 1.015,
+                                    rotate: -0.2,
                                 }}
-                                transition={{
-                                    duration: 0.4,
-                                }}
-                                className="overflow-hidden rounded-4xl border border-white/10 shadow-2xl">
+                                transition={{ duration: 0.4 }}
+                                className="overflow-hidden">
                                 <motion.img
-                                    src=".././src/assets/hero-image.jpg"
+                                    src=".././src/assets/hero-image.png"
                                     alt="Codecelix Hero"
-                                    className="h-full w-full object-cover"
+                                    className="h-full w-full object-cover max-h-105 lg:max-h-120"
                                     animate={{
-                                        scale: [1, 1.03, 1],
+                                        scale: [1, 1.02, 1],
                                     }}
                                     transition={{
                                         duration: 10,
@@ -302,7 +262,7 @@ const Hero = () => {
                                 <motion.div
                                     key={card.title}
                                     animate={{
-                                        y: [0, -12, 0],
+                                        y: [0, -8, 0],
                                     }}
                                     transition={{
                                         duration: card.duration,
@@ -312,13 +272,13 @@ const Hero = () => {
                                         delay: card.delay,
                                     }}
                                     className={`absolute ${card.className}`}>
-                                    <div className="glass-card rounded-2xl px-5 py-3 shadow-xl">
-                                        <div className="flex items-center gap-3">
+                                    <div className="glass-card rounded-2xl px-4 py-2 shadow-xl">
+                                        <div className="flex items-center gap-2.5">
                                             <span
                                                 className={`h-2.5 w-2.5 rounded-full ${card.color}`}
                                             />
 
-                                            <span className="text-sm font-medium text-white">
+                                            <span className="text-xs font-medium text-white">
                                                 {card.title}
                                             </span>
                                         </div>

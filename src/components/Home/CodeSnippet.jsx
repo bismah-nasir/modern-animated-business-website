@@ -9,7 +9,6 @@ const CodeSnippet = () => {
             transition={{ duration: 0.7 }}>
             <div className="glass-card relative overflow-hidden rounded-2xl p-6 md:p-8">
                 {/* Window Header */}
-
                 <div className="mb-6 flex items-center gap-2">
                     <div className="h-3 w-3 rounded-full bg-red-500/60" />
 
@@ -122,7 +121,6 @@ const CodeSnippet = () => {
                 </pre>
 
                 {/* Background Glow */}
-
                 <div
                     className="pointer-events-none absolute -bottom-20 -right-20 h-60 w-60 rounded-full blur-3xl"
                     style={{

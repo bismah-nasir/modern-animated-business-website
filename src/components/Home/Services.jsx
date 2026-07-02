@@ -14,14 +14,16 @@ const Services = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="section-header">
-                    <span className="section-badge">Our Services</span>
+                    className="section-header text-center flex flex-col items-center mb-14 md:mb-20">
+                    <span className="inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light">
+                        Our Services
+                    </span>
 
-                    <h2 className="section-title mt-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] mt-4 max-w-2xl text-white">
                         What We <span className="gradient-text">Do Best</span>
                     </h2>
 
-                    <p className="section-description">
+                    <p className="text-base md:text-lg text-text-secondary leading-relaxed mt-4 max-w-xl mx-auto font-normal">
                         We specialise in crafting end-to-end digital solutions
                         that combine beautiful design with rock-solid
                         engineering.
@@ -34,7 +36,7 @@ const Services = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+                    className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
                     {services.map((service, index) => (
                         <ServicesCard
                             key={service.id}

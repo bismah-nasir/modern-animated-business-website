@@ -17,35 +17,39 @@ const ServicesCard = ({ service, index }) => {
             className={`glass-surface card-hover rounded-2xl p-6 md:p-8 h-full flex flex-col transition-default ${service.colors.hoverBorder}`}>
             {/* Icon */}
             <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center ${service.colors.bg}`}>
+                className={`w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${service.colors.bg}`}>
                 <Icon
-                    size={34}
+                    size={26}
                     className={service.colors.text}
                     strokeWidth={1.8}
                 />
             </div>
 
             {/* Heading */}
-            <h3 className="mt-6 text-2xl font-bold">{service.title}</h3>
+            <h3 className="text-xl font-bold tracking-tight text-white mt-4">
+                {service.title}
+            </h3>
 
-            <p className={`mt-2 text-sm font-semibold ${service.colors.text}`}>
+            <p
+                className={`text-xs uppercase tracking-wider font-semibold mt-1.5 ${service.colors.text}`}>
                 {service.subtitle}
             </p>
 
             {/* Description */}
-            <p className="body-text mt-4 text-base">{service.description}</p>
+            <p className="text-sm text-text-secondary leading-relaxed mt-3">
+                {service.description}
+            </p>
 
             {/* Features */}
-            <ul className="mt-6 space-y-3">
+            <ul className="space-y-2.5 mt-4">
                 {service.features.map((feature) => (
                     <li
                         key={feature}
-                        className="flex items-center gap-3 text-sm text-text-secondary">
+                        className="flex items-center gap-2.5 text-xs text-text-secondary font-normal">
                         <Check
-                            size={16}
+                            size={14}
                             className={`${service.colors.text} shrink-0`}
                         />
-
                         <span>{feature}</span>
                     </li>
                 ))}
@@ -56,19 +60,19 @@ const ServicesCard = ({ service, index }) => {
                 {service.technologies.map((tech) => (
                     <span
                         key={tech}
-                        className={`rounded-full border px-3 py-1 text-xs font-medium ${service.colors.bg} ${service.colors.border} ${service.colors.text}`}>
+                        className={`rounded-full border px-3 py-1 text-xs font-medium tracking-wide transition-colors duration-300 ${service.colors.bg} ${service.colors.border} ${service.colors.text}`}>
                         {tech}
                     </span>
                 ))}
             </div>
 
             {/* CTA */}
-            <div className="mt-auto pt-8">
+            <div className="mt-auto pt-6">
                 <a
                     href={service.href}
-                    className={`inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 hover:gap-3 ${service.colors.text}`}>
+                    className={`inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase transition-all duration-300 hover:gap-2.5 ${service.colors.text}`}>
                     Learn More
-                    <ArrowRight size={16} />
+                    <ArrowRight size={14} />
                 </a>
             </div>
         </motion.article>
