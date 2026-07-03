@@ -287,7 +287,7 @@ const Contact = () => {
                             <div className="glass-surface p-2 rounded-2xl border border-white/5 overflow-hidden h-72">
                                 <iframe
                                     title="Office Location Map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.183792372421!2d-73.98773128459375!3d40.74844047932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1622566000000!5m2!1sen!2sus"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.0904740340766!2d67.1090841752008!3d24.88173117791538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33eafe2ecc311%3A0x8213daf29adc6923!2sShahra-e-Faisal%2C%20Pakistan!5e0!3m2!1sen!2s!4v1783060146537!5m2!1sen!2s"
                                     width="100%"
                                     height="100%"
                                     style={{
