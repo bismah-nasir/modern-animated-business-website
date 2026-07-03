@@ -22,10 +22,6 @@ export const quickLinks = [
         title: "Contact",
         href: "/contact",
     },
-    {
-        title: "Careers",
-        href: "/careers",
-    },
 ];
 
 export const services = [
@@ -84,13 +80,13 @@ export const contactInfo = [
     {
         icon: Phone,
         label: "Phone",
-        value: "+1 (555) 123-4567",
-        href: "tel:+15551234567",
+        value: "+92 (300) 123-4567",
+        href: "tel:+923001234567",
     },
     {
         icon: MapPin,
         label: "Location",
-        value: "123 Innovation Drive, San Francisco, CA",
+        value: "123 Innovation Boulevard, Shahrah-e-Faisal, Karachi",
         href: null,
     },
 ];
