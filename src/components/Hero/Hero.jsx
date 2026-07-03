@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import heroImg from "../../assets/hero-image.png";
 import { ArrowRight, Mouse, ChevronDown } from "lucide-react";
 
 const particles = Array.from({ length: 24 }, (_, i) => ({
@@ -243,7 +244,7 @@ const Hero = () => {
                                 transition={{ duration: 0.4 }}
                                 className="overflow-hidden">
                                 <motion.img
-                                    src=".././src/assets/hero-image.png"
+                                    src={heroImg}
                                     alt="Codecelix Hero"
                                     className="h-full w-full object-cover max-h-105 lg:max-h-120"
                                     animate={{
