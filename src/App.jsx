@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./components/Home/Home.jsx";
+import About from "./components/About/About.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
@@ -12,16 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
 
-                <Route
-                    path="/about"
-                    element={
-                        <main className="min-h-screen bg-background pt-20">
-                            <h1 className="text-center text-4xl font-bold text-text-primary">
-                                About Page
-                            </h1>
-                        </main>
-                    }
-                />
+                <Route path="/about" element={<About />} />
 
                 <Route
                     path="/services"
