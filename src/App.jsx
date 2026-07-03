@@ -5,6 +5,7 @@ import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import ServicesPage from "./components/Services/ServicesPage.jsx";
 import PortfolioPage from "./components/Portfolio/PortfolioPage.jsx";
+import Contact from "./components/Contact/Contact.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
@@ -21,16 +22,7 @@ function App() {
 
                 <Route path="/portfolio" element={<PortfolioPage />} />
 
-                <Route
-                    path="/contact"
-                    element={
-                        <main className="min-h-screen bg-background pt-20">
-                            <h1 className="text-center text-4xl font-bold text-text-primary">
-                                Contact Page
-                            </h1>
-                        </main>
-                    }
-                />
+                <Route path="/contact" element={<Contact />} />
             </Routes>
 
             <Footer />
