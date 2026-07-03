@@ -1,6 +1,4 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 // Reused sections from homepage
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs.jsx";

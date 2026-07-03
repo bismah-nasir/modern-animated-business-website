@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Mail,
@@ -51,7 +51,7 @@ const Contact = () => {
             } else {
                 setFormStatus("error");
             }
-        } catch (err) {
+        } catch {
             setFormStatus("error");
         }
     };
