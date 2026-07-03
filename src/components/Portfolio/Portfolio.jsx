@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { portfolio } from "./portfolio";
 import PortfolioCard from "./PortfolioCard";
 
-const Portfolio = () => {
+const Portfolio = ({ isHomePage = false }) => {
     return (
         <section className="relative border-y border-white/5 overflow-hidden py-20 md:py-28 bg-background">
             {/* Background Effects */}
@@ -41,32 +41,36 @@ const Portfolio = () => {
 
                 {/* Portfolio Grid */}
                 <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-                    {portfolio.map((project, index) => (
-                        <PortfolioCard
-                            key={project.id}
-                            project={project}
-                            index={index}
-                        />
-                    ))}
+                    {(isHomePage ? portfolio.slice(0, 3) : portfolio).map(
+                        (project, index) => (
+                            <PortfolioCard
+                                key={project.id}
+                                project={project}
+                                index={index}
+                            />
+                        ),
+                    )}
                 </div>
 
                 {/* CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.25,
-                    }}
-                    className="mt-16 flex justify-center">
-                    <Link
-                        to="/portfolio"
-                        className="btn-secondary inline-flex items-center justify-center">
-                        View All Projects
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                </motion.div>
+                {isHomePage && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.6,
+                            delay: 0.25,
+                        }}
+                        className="mt-16 flex justify-center">
+                        <Link
+                            to="/portfolio"
+                            className="btn-secondary inline-flex items-center justify-center">
+                            View All Projects
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </motion.div>
+                )}
             </div>
         </section>
     );

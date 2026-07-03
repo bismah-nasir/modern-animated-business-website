@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Mail,
@@ -51,7 +51,7 @@ const Contact = () => {
             } else {
                 setFormStatus("error");
             }
-        } catch (err) {
+        } catch {
             setFormStatus("error");
         }
     };
@@ -80,14 +80,8 @@ const Contact = () => {
             {/* Contact Hero Section */}
             <section className="relative isolate flex flex-col justify-center items-center overflow-hidden py-16 md:py-24 bg-background px-4 sm:px-6 lg:px-8 border-b border-white/5">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div
-                        className="absolute inset-0 opacity-[0.03]"
-                        style={{
-                            backgroundImage:
-                                "radial-gradient(circle, white 1px, transparent 1px)",
-                            backgroundSize: "42px 42px",
-                        }}
-                    />
+                    {/* Grid */}
+                    <div className="absolute inset-0 opacity-[0.03] radial-grid-pattern" />
 
                     {/* Glow Blobs */}
                     <motion.div
@@ -161,7 +155,7 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light mb-5">
+                        className="section-badge mb-5">
                         Get In Touch
                     </motion.span>
 
@@ -178,7 +172,7 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-base md:text-lg text-text-secondary leading-relaxed mt-4 max-w-xl mx-auto font-normal">
+                        className="section-description max-w-xl mx-auto mt-4 text-center">
                         Have an idea or a project roadmap? Contact our
                         engineering team for technical consults, feasibility
                         evaluations, and custom software quotes.
@@ -283,19 +277,14 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            {/* Google Map Integration */}
                             <div className="glass-surface p-2 rounded-2xl border border-white/5 overflow-hidden h-72">
                                 <iframe
                                     title="Office Location Map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.183792372421!2d-73.98773128459375!3d40.74844047932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1622566000000!5m2!1sen!2sus"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.0904740340766!2d67.1090841752008!3d24.88173117791538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33eafe2ecc311%3A0x8213daf29adc6923!2sShahra-e-Faisal%2C%20Pakistan!5e0!3m2!1sen!2s!4v1783060146537!5m2!1sen!2s"
                                     width="100%"
                                     height="100%"
-                                    style={{
-                                        border: 0,
-                                        borderRadius: "1rem",
-                                        filter: "grayscale(1) invert(0.9) contrast(1.2)",
-                                        opacity: 0.85,
-                                    }}
+                                    style={{ border: 0 }}
+                                    className="map-dark-theme rounded-2xl"
                                     allowFullScreen=""
                                     loading="lazy"
                                 />
@@ -362,7 +351,7 @@ const Contact = () => {
                                                         name="name"
                                                         required
                                                         placeholder="Sarah Chen"
-                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-text-secondary/50 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300"
+                                                        className="glass-input"
                                                     />
                                                 </div>
 
@@ -378,7 +367,7 @@ const Contact = () => {
                                                         name="email"
                                                         required
                                                         placeholder="sarah@company.com"
-                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-text-secondary/50 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300"
+                                                        className="glass-input"
                                                     />
                                                 </div>
                                             </div>
@@ -395,7 +384,7 @@ const Contact = () => {
                                                     required
                                                     rows="5"
                                                     placeholder="Tell us about your application requirement, features, and target launch timeline..."
-                                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-text-secondary/50 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300 resize-none"
+                                                    className="glass-input resize-none"
                                                 />
                                             </div>
 
@@ -438,11 +427,9 @@ const Contact = () => {
             <section className="section-padding bg-surface border-y border-white/5 relative overflow-hidden">
                 <div className="container-width">
                     <div className="section-header text-center flex flex-col items-center mb-12 md:mb-14">
-                        <span className="inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light mb-4">
-                            FAQ
-                        </span>
+                        <span className="section-badge mb-4">FAQ</span>
 
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] mt-3 text-white">
+                        <h2 className="section-title mt-3 text-white">
                             Frequently Asked{" "}
                             <span className="gradient-text">Questions</span>
                         </h2>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
 
 import {
     footerContent,
@@ -194,12 +193,12 @@ const Footer = () => {
                                 placeholder={
                                     footerContent.newsletter.placeholder
                                 }
-                                className="bg-surface rounded-l-xl border border-white/10 px-4 py-2.5 outline-none transition-all duration-300 w-full md:w-64 text-white text-sm placeholder:text-text-secondary focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
+                                className="bg-surface rounded-xl sm:rounded-r-none sm:rounded-l-xl border border-white/10 px-4 py-2.5 outline-none transition-all duration-300 w-full md:w-64 text-white text-sm placeholder:text-text-secondary focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
                             />
 
                             <button
                                 type="submit"
-                                className="bg-primary hover:bg-accent-light rounded-r-xl px-6 py-2.5 text-white text-sm font-medium transition-opacity duration-200 whitespace-nowrap cursor-pointer">
+                                className="bg-primary hover:bg-accent-light rounded-xl sm:rounded-l-none sm:rounded-r-xl px-6 py-2.5 text-white text-sm font-medium transition-opacity duration-200 whitespace-nowrap cursor-pointer mt-2 sm:mt-0">
                                 {footerContent.newsletter.buttonText}
                             </button>
                         </form>

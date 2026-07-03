@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../Hero/Hero.jsx";
 import Companies from "../Companies/Companies.jsx";
 import Services from "../Services/Services.jsx";
@@ -16,7 +15,7 @@ const Home = () => {
             <Services />
             <WhyChooseUs />
             <Stats />
-            <Portfolio />
+            <Portfolio isHomePage={true} />
             <Testimonials />
             <CTA />
         </main>
