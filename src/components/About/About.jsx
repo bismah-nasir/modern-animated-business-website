@@ -32,14 +32,7 @@ const About = () => {
                 {/* Background Effects */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     {/* Grid */}
-                    <div
-                        className="absolute inset-0 opacity-[0.03]"
-                        style={{
-                            backgroundImage:
-                                "radial-gradient(circle, white 1px, transparent 1px)",
-                            backgroundSize: "42px 42px",
-                        }}
-                    />
+                    <div className="absolute inset-0 opacity-[0.03] radial-grid-pattern" />
 
                     {/* Top Left Blob */}
                     <motion.div
@@ -115,7 +108,7 @@ const About = () => {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light mb-5">
+                        className="section-badge mb-5">
                         About Our Agency
                     </motion.span>
 
@@ -154,11 +147,11 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                             className="flex flex-col">
-                            <span className="self-start inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light mb-4">
+                            <span className="section-badge self-start mb-4">
                                 {companyIntro.badge}
                             </span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] mt-3 text-white">
+                            <h2 className="section-title mt-3 text-white">
                                 {companyIntro.title}
                             </h2>
 
@@ -273,16 +266,16 @@ const About = () => {
                 <div className="container-width">
                     {/* Header */}
                     <div className="section-header text-center flex flex-col items-center mb-12 md:mb-14">
-                        <span className="inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light mb-4">
+                        <span className="section-badge mb-4">
                             Our Core Team
                         </span>
 
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] mt-3 text-white">
+                        <h2 className="section-title mt-3 text-white">
                             Meet Our{" "}
                             <span className="gradient-text">Experts</span>
                         </h2>
 
-                        <p className="text-base md:text-lg text-text-secondary leading-relaxed mt-4 max-w-xl mx-auto font-normal">
+                        <p className="section-description max-w-xl mx-auto mt-4 text-center">
                             A highly specialized team of system architects,
                             machine learning engineers, and experience designers
                             collaborating to build next-generation platforms.

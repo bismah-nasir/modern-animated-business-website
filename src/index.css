@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-
 /* =========================================================
    THEME
 ========================================================= */
@@ -28,11 +27,6 @@
     --shadow-glow: 0 0 40px rgba(6, 182, 212, 0.25);
     --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.25);
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
-
-    /* Radius */
-    --radius-xl: 1rem;
-    --radius-2xl: 1.5rem;
-    --radius-full: 9999px;
 
     /* Typography */
     --font-sans:
@@ -176,52 +170,7 @@
         line-height: 1.1;
     }
 
-    .heading-lg {
-        font-size: clamp(2.25rem, 4vw, 3.5rem);
-        font-weight: 700;
-        line-height: 1.15;
-    }
-
     .body-text {
-        color: var(--color-text-secondary);
-        font-size: 1.125rem;
-        line-height: 1.9;
-    }
-
-    /* ---------- Section Typography ---------- */
-
-    .section-badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.5rem 1.25rem;
-        border-radius: 9999px;
-        border: 1px solid rgba(34, 211, 238, 0.4);
-        background: rgba(34, 211, 238, 0.08);
-        color: var(--color-primary-light);
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-    }
-
-    .section-title {
-        font-size: clamp(2.25rem, 4vw, 3.5rem);
-        font-weight: 700;
-        line-height: 1.15;
-        text-wrap: balance;
-    }
-
-    .section-subtitle {
-        color: var(--color-text-secondary);
-        font-size: 0.875rem;
-        font-weight: 600;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-    }
-
-    .section-description {
-        max-width: 42rem;
-        margin-top: 1.5rem;
         color: var(--color-text-secondary);
         font-size: 1.125rem;
         line-height: 1.9;
@@ -235,9 +184,56 @@
         margin-bottom: 3rem;
     }
 
-    .section-header-left {
-        align-items: flex-start;
-        text-align: left;
+    /* ---------- Reusable Component Styles ---------- */
+
+    .section-badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 9999px;
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        background: rgba(34, 211, 238, 0.05);
+        padding: 0.375rem 1rem;
+        font-size: 0.625rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--color-primary-light);
+    }
+
+    .section-title {
+        font-size: clamp(1.875rem, 4vw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: white;
+        text-wrap: balance;
+    }
+
+    .section-description {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        color: var(--color-text-secondary);
+        line-height: 1.625;
+        font-weight: 400;
+    }
+
+    .glass-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--color-border);
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .glass-input:focus {
+        outline: none;
+        border-color: rgba(6, 182, 212, 0.5);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-input::placeholder {
+        color: rgba(148, 163, 184, 0.5);
     }
 }
 
@@ -362,6 +358,18 @@
             #3b82f6 80%,
             transparent 100%
         );
+    }
+
+    /* ---------- Reusable Utility Styles ---------- */
+
+    .radial-grid-pattern {
+        background-image: radial-gradient(circle, white 1px, transparent 1px);
+        background-size: 42px 42px;
+    }
+
+    .map-dark-theme {
+        filter: grayscale(1) invert(0.9) contrast(1.2);
+        opacity: 0.85;
     }
 }
 

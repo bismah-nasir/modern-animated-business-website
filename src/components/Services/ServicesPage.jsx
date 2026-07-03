@@ -23,14 +23,7 @@ const ServicesPage = () => {
                 {/* Background Effects */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     {/* Grid */}
-                    <div
-                        className="absolute inset-0 opacity-[0.03]"
-                        style={{
-                            backgroundImage:
-                                "radial-gradient(circle, white 1px, transparent 1px)",
-                            backgroundSize: "42px 42px",
-                        }}
-                    />
+                    <div className="absolute inset-0 opacity-[0.03] radial-grid-pattern" />
 
                     {/* Top Left Blob */}
                     <motion.div
@@ -106,7 +99,7 @@ const ServicesPage = () => {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light mb-5">
+                        className="section-badge mb-5">
                         Our Expertise
                     </motion.span>
 
@@ -125,7 +118,7 @@ const ServicesPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-base md:text-lg text-text-secondary leading-relaxed mt-4 max-w-xl mx-auto font-normal">
+                        className="section-description max-w-xl mx-auto mt-4 text-center">
                         We design, build, and deploy intelligent software
                         designed to last. From AI integration to high-converting
                         web applications, we provide the technical expertise to
