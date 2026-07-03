@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const PortfolioCard = ({ project, index }) => {
-    const Icon = project.icon;
-    const ArrowIcon = project.button.icon;
-
     return (
         <motion.article
             initial={{ opacity: 0, y: 40 }}

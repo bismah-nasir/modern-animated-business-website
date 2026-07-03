@@ -16,7 +16,7 @@ const Home = () => {
             <Services />
             <WhyChooseUs />
             <Stats />
-            <Portfolio />
+            <Portfolio isHomePage={true} />
             <Testimonials />
             <CTA />
         </main>
