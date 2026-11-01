@@ -1,6 +1,23 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
+// Key results row (e.g. "50K+ Users"), shown in the hover overlay and on touch screens
+const ProjectStats = ({ stats, className = "" }) => (
+    <div
+        className={`flex justify-center gap-5 border-t border-white/5 ${className}`}>
+        {stats.map((item) => (
+            <div key={item.label} className="text-center px-1">
+                <h4 className="text-base font-bold text-white tracking-tight">
+                    {item.value}
+                </h4>
+                <p className="mt-0.5 text-[10px] uppercase tracking-wider text-text-secondary font-medium">
+                    {item.label}
+                </p>
+            </div>
+        ))}
+    </div>
+);
+
 const PortfolioCard = ({ project, index }) => {
     return (
         <motion.article
@@ -15,7 +32,7 @@ const PortfolioCard = ({ project, index }) => {
             className="group overflow-hidden bg-surface rounded-3xl border border-white/10">
             {/* Hero Area */}
             <div
-                className="relative h-56 overflow-hidden"
+                className="relative h-56 overflow-hidden pointer-coarse:h-40"
                 style={{
                     background: `
                     radial-gradient(circle at 30% 40%, ${project.gradient.primary}66 0%, transparent 50%),
@@ -56,27 +73,17 @@ const PortfolioCard = ({ project, index }) => {
                     </div>
                 )}
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 flex translate-y-4 items-center justify-center bg-slate-900/90 p-5 opacity-0 backdrop-blur-md transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100 z-30">
+                {/* Hover Overlay (mouse devices only; touch screens show the details below) */}
+                <div className="absolute inset-0 flex translate-y-4 items-center justify-center bg-slate-900/90 p-5 opacity-0 backdrop-blur-md transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100 z-30 pointer-coarse:hidden">
                     <div className="text-center w-full">
                         <p className="text-xs md:text-sm leading-relaxed text-slate-300 font-normal line-clamp-3">
                             {project.description}
                         </p>
 
-                        <div className="mt-4 flex justify-center gap-5 border-t border-white/5 pt-3.5">
-                            {project.stats.map((item) => (
-                                <div
-                                    key={item.label}
-                                    className="text-center px-1">
-                                    <h4 className="text-base font-bold text-white tracking-tight">
-                                        {item.value}
-                                    </h4>
-                                    <p className="mt-0.5 text-[10px] uppercase tracking-wider text-text-secondary font-medium">
-                                        {item.label}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+                        <ProjectStats
+                            stats={project.stats}
+                            className="mt-4 pt-3.5"
+                        />
                     </div>
                 </div>
             </div>
@@ -93,8 +100,19 @@ const PortfolioCard = ({ project, index }) => {
                     </span>
                 </div>
 
-                {/* Technologies */}
+                {/* Details for touch screens, which can't hover */}
+                <div className="hidden pointer-coarse:block">
+                    <p className="text-sm leading-relaxed text-text-secondary font-normal">
+                        {project.description}
+                    </p>
 
+                    <ProjectStats
+                        stats={project.stats}
+                        className="my-4 border-b py-3.5"
+                    />
+                </div>
+
+                {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                         <span

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 // Reused sections from homepage
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs.jsx";
 import CTA from "../CTA/CTA.jsx";
+import PageHero from "../PageHero/PageHero.jsx";
 
 // Data files
 import {
@@ -11,128 +12,19 @@ import {
     teamMembers,
     socialIcons,
 } from "./about.js";
-
-// Particles logic for Hero background
-const particles = Array.from({ length: 16 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    duration: 7 + Math.random() * 6,
-    delay: Math.random() * 4,
-    size: 2 + Math.random() * 3,
-}));
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 
 const About = () => {
     return (
         <main className="min-h-screen bg-background pt-20">
             {/* About Hero Section */}
-            <section className="relative isolate flex flex-col justify-center items-center overflow-hidden py-16 md:py-24 bg-background px-4 sm:px-6 lg:px-8 border-b border-white/5">
-                {/* Background Effects */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Grid */}
-                    <div className="absolute inset-0 opacity-[0.03] radial-grid-pattern" />
-
-                    {/* Top Left Blob */}
-                    <motion.div
-                        animate={{
-                            x: [0, 30, 0],
-                            y: [0, 20, 0],
-                            scale: [1, 1.05, 1],
-                        }}
-                        transition={{
-                            duration: 15,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                        className="absolute -left-32 -top-32 h-100 w-100 rounded-full bg-primary/10 blur-[130px]"
-                    />
-
-                    {/* Right Blob */}
-                    <motion.div
-                        animate={{
-                            x: [0, -30, 0],
-                            y: [0, -25, 0],
-                            scale: [1, 1.08, 1],
-                        }}
-                        transition={{
-                            duration: 18,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                        className="absolute -right-20 top-[20%] h-80 w-80 rounded-full bg-purple-600/10 blur-[120px]"
-                    />
-
-                    {/* Rotating Rings */}
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <div className="ring ring-1"></div>
-                        <div className="ring ring-2"></div>
-                        <div className="ring ring-3"></div>
-                        <div className="ring ring-4"></div>
-                    </div>
-
-                    {/* Floating Particles */}
-                    <div className="absolute inset-0">
-                        {particles.map((particle) => (
-                            <motion.span
-                                key={particle.id}
-                                className="absolute rounded-full bg-cyan-300"
-                                style={{
-                                    width: particle.size,
-                                    height: particle.size,
-                                    left: particle.left,
-                                    top: particle.top,
-                                    opacity: 0.35,
-                                }}
-                                animate={{
-                                    y: [0, -20, 0],
-                                    opacity: [0.2, 0.6, 0.2],
-                                }}
-                                transition={{
-                                    duration: particle.duration,
-                                    repeat: Infinity,
-                                    delay: particle.delay,
-                                    ease: "easeInOut",
-                                }}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Bottom Fade */}
-                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
-                </div>
-
-                <div className="container-width relative z-10 w-full text-center flex flex-col items-center">
-                    <motion.span
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="section-badge mb-5">
-                        About Our Agency
-                    </motion.span>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.15] text-white max-w-3xl">
-                        Driven by Innovation, <br />
-                        <span className="gradient-text">
-                            Focused on Results
-                        </span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-base md:text-lg text-text-secondary leading-relaxed mt-4 max-w-xl mx-auto font-normal">
-                        We are a team of passionate engineers, designers, and
-                        strategists. We build high-performance products by
-                        blending advanced software development with exceptional
-                        design systems.
-                    </motion.p>
-                </div>
-            </section>
+            <PageHero
+                badge="About Our Agency"
+                title="Driven by Innovation,"
+                highlight="Focused on Results"
+                description="We are a team of passionate engineers, designers, and strategists. We build high-performance products by blending advanced software development with exceptional design systems."
+                glow="purple"
+            />
 
             {/* Company Introduction Section */}
             <section className="relative overflow-hidden py-20 md:py-28 bg-background">
@@ -262,26 +154,16 @@ const About = () => {
             {/* Team Members Section */}
             <section className="section-padding bg-background relative overflow-hidden">
                 <div className="container-width">
-                    {/* Header */}
-                    <div className="section-header text-center flex flex-col items-center mb-12 md:mb-14">
-                        <span className="section-badge mb-4">
-                            Our Core Team
-                        </span>
-
-                        <h2 className="section-title mt-3 text-white">
-                            Meet Our{" "}
-                            <span className="gradient-text">Experts</span>
-                        </h2>
-
-                        <p className="section-description max-w-xl mx-auto mt-4 text-center">
-                            A highly specialized team of system architects,
-                            machine learning engineers, and experience designers
-                            collaborating to build next-generation platforms.
-                        </p>
-                    </div>
+                    <SectionHeader
+                        badge="Our Core Team"
+                        title="Meet Our"
+                        highlight="Experts"
+                        description="A highly specialized team of system architects, machine learning engineers, and experience designers collaborating to build next-generation platforms."
+                        className="mb-12 md:mb-14"
+                    />
 
                     {/* Team Cards Grid */}
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-12">
+                    <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 mt-12">
                         {teamMembers.map((member, index) => {
                             const Icon = member.icon;
                             return (
@@ -307,7 +189,7 @@ const About = () => {
                                         </div>
 
                                         {/* Social Links */}
-                                        <div className="flex gap-2">
+                                        <div className="-mr-2 -mt-2 flex">
                                             {Object.entries(member.socials).map(
                                                 ([platform, url]) => {
                                                     const SocialIcon =
@@ -324,7 +206,7 @@ const About = () => {
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             aria-label={`${member.name}'s ${platform}`}
-                                                            className="text-text-secondary hover:text-white transition-colors duration-200">
+                                                            className="flex h-7 w-7 items-center justify-center rounded-md text-text-secondary hover:bg-white/5 hover:text-white transition-colors duration-200">
                                                             <SocialIcon
                                                                 size={14}
                                                             />
@@ -354,7 +236,7 @@ const About = () => {
                                         {member.skills.map((skill) => (
                                             <span
                                                 key={skill}
-                                                className={`text-[9px] font-semibold tracking-wide px-2 py-0.5 rounded-full border ${member.colors.bg} ${member.colors.border} ${member.colors.text}`}>
+                                                className={`text-[10px] font-semibold tracking-wide px-2 py-0.5 rounded-full border ${member.colors.bg} ${member.colors.border} ${member.colors.text}`}>
                                                 {skill}
                                             </span>
                                         ))}

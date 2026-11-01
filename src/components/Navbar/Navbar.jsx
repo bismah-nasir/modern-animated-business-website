@@ -4,11 +4,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 import { navLinks } from "./navigation";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+
+    // Remember the page the menu was opened on, so it closes itself on any route change
+    const [menuOpenPath, setMenuOpenPath] = useState(null);
+    const isMenuOpen = menuOpenPath === location.pathname;
+
+    const setIsMenuOpen = (value) => {
+        const next = typeof value === "function" ? value(isMenuOpen) : value;
+        setMenuOpenPath(next ? location.pathname : null);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,10 +28,6 @@ const Navbar = () => {
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    useEffect(() => {
-        setIsMenuOpen(false);
-    }, [location.pathname]);
 
     useEffect(() => {
         if (isMenuOpen) {
@@ -38,8 +43,8 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 768) {
-                setIsMenuOpen(false);
+            if (window.innerWidth >= 1024) {
+                setMenuOpenPath(null);
             }
         };
 
@@ -59,18 +64,14 @@ const Navbar = () => {
                 }`}>
                 <nav className="container-width flex h-20 items-center justify-between">
                     <Link to="/" className="group flex items-center gap-3">
-                        <div className="gradient-primary flex h-11 w-11 items-center justify-center rounded-xl transition-default glow-primary group-hover:scale-105">
-                            <span className="text-lg font-bold text-white">
-                                C
-                            </span>
-                        </div>
+                        <Logo className="h-11 w-11 transition-default group-hover:scale-105 group-hover:rotate-[36deg]" />
 
                         <span className="text-xl font-bold tracking-tight text-text-primary">
-                            Codecelix
+                            Glassbloom
                         </span>
                     </Link>
 
-                    <div className="hidden items-center gap-2 md:flex">
+                    <div className="hidden items-center gap-2 lg:flex">
                         {navLinks.map((item) => (
                             <NavLink
                                 key={item.name}
@@ -87,7 +88,7 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    <div className="hidden md:block">
+                    <div className="hidden lg:block">
                         <Link to="/contact" className="btn-primary group">
                             <span>Get Started</span>
 
@@ -102,7 +103,7 @@ const Navbar = () => {
                         onClick={() => setIsMenuOpen((prev) => !prev)}
                         aria-label="Toggle Navigation Menu"
                         aria-expanded={isMenuOpen}
-                        className="flex h-11 w-11 items-center justify-center rounded-full text-text-primary transition-default hover:bg-white/10 md:hidden">
+                        className="flex h-11 w-11 items-center justify-center rounded-full text-text-primary transition-default hover:bg-white/10 lg:hidden">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={isMenuOpen ? "close" : "menu"}
@@ -128,7 +129,7 @@ const Navbar = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="fixed inset-0 top-20 z-40 md:hidden">
+                        className="fixed inset-0 top-20 z-40 lg:hidden">
                         <div className="glass-overlay flex h-full flex-col items-center justify-center gap-6 px-6">
                             {navLinks.map((item, index) => (
                                 <motion.div

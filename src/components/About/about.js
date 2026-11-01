@@ -32,12 +32,12 @@ export const companyIntro = {
     badge: "Who We Are",
     title: "Engineering the Future of Digital Innovation",
     paragraphs: [
-        "Codecelix is an AI-powered digital agency built on a foundation of technical excellence and creative design. We design, develop, and deploy custom software products that solve real-world problems. Whether you're integrating AI, automating workflows, or launching a premium web application, we provide the technical expertise to scale.",
+        "Glassbloom is an AI-powered digital agency built on a foundation of technical excellence and creative design. We design, develop, and deploy custom software products that solve real-world problems. Whether you're integrating AI, automating workflows, or launching a premium web application, we provide the technical expertise to scale.",
         "We believe that modern businesses shouldn't be held back by outdated tech stack limitations. That is why we work with cutting-edge tools—including cloud infrastructure, deep-learning APIs, and progressive frontend systems—to engineer secure, fast, and responsive solutions that convert users and elevate brands.",
     ],
     achievements: [
         { value: "99.9%", label: "Uptime Achieved", color: "text-blue-500" },
-        { value: "180+", label: "Successful Projects", color: "text-cyan-500" },
+        { value: "250+", label: "Successful Projects", color: "text-cyan-500" },
         { value: "15+", label: "AI Deployments", color: "text-violet-500" },
         {
             value: "100%",

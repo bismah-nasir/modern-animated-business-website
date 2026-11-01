@@ -8,7 +8,7 @@ export const testimonials = [
         gradient: "from-cyan-500 to-blue-500",
         rating: 5,
 
-        review: "Codecelix transformed our entire digital presence. Their attention to detail and technical expertise is unmatched. The platform they built handles millions of users flawlessly.",
+        review: "Glassbloom transformed our entire digital presence. Their attention to detail and technical expertise is unmatched. The platform they built handles millions of users flawlessly.",
     },
 
     {
@@ -20,7 +20,7 @@ export const testimonials = [
         gradient: "from-cyan-500 to-violet-500",
         rating: 5,
 
-        review: "Working with Codecelix was a game-changer for our startup. They delivered a product that exceeded every expectation and helped us secure our Series B funding.",
+        review: "Working with Glassbloom was a game-changer for our startup. They delivered a product that exceeded every expectation and helped us secure our Series B funding.",
     },
 
     {
@@ -32,7 +32,7 @@ export const testimonials = [
         gradient: "from-indigo-500 to-blue-500",
         rating: 5,
 
-        review: "The AI solution Codecelix built reduced our inspection costs by 60% and improved accuracy to near-perfect levels. Truly world-class engineering.",
+        review: "The AI solution Glassbloom built reduced our inspection costs by 60% and improved accuracy to near-perfect levels. Truly world-class engineering.",
     },
 
     {
@@ -56,7 +56,7 @@ export const testimonials = [
         gradient: "from-cyan-500 to-violet-500",
         rating: 5,
 
-        review: "Codecelix doesnt just build software — they build partnerships. Their proactive communication and strategic thinking set them apart from every agency weve worked with.",
+        review: "Glassbloom doesn't just build software — they build partnerships. Their proactive communication and strategic thinking set them apart from every agency we've worked with.",
     },
 
     {

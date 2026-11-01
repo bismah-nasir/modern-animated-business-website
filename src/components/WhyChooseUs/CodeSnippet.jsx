@@ -17,7 +17,7 @@ const CodeSnippet = () => {
                     <div className="h-3 w-3 rounded-full bg-green-500/60" />
 
                     <span className="ml-3 font-mono text-xs text-text-secondary">
-                        codecelix.config.ts
+                        glassbloom.config.ts
                     </span>
                 </div>
 

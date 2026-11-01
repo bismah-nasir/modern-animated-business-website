@@ -13,16 +13,8 @@ import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 // Reused components
 import CTA from "../CTA/CTA.jsx";
-
-// Particles logic for Hero background
-const particles = Array.from({ length: 16 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    duration: 8 + Math.random() * 5,
-    delay: Math.random() * 3,
-    size: 2 + Math.random() * 2.5,
-}));
+import PageHero from "../PageHero/PageHero.jsx";
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 
 // Formspree Config
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdlkoya";
@@ -58,7 +50,7 @@ const Contact = () => {
 
     const faqItems = [
         {
-            question: "What technologies does Codecelix specialize in?",
+            question: "What technologies does Glassbloom specialize in?",
             answer: "We specialize in modern frontend libraries (React, Next.js), cross-platform mobile frameworks (React Native, Flutter), AI integrations (OpenAI APIs, machine learning pipelines), and scalable backend architectures (Node.js, TypeScript, PostgreSQL, AWS).",
         },
         {
@@ -70,7 +62,7 @@ const Contact = () => {
             answer: "Yes, we offer monthly SLA agreements covering security updates, server monitoring, cloud optimizations, feature upgrades, and content adjustments to ensure your application stays performant and online.",
         },
         {
-            question: "How do we get started with Codecelix?",
+            question: "How do we get started with Glassbloom?",
             answer: "Getting started is simple! Fill out the contact form with details about your project. We will reach out to you within 24 business hours to schedule a 30-minute discovery call and compile a technical roadmap proposal.",
         },
     ];
@@ -78,107 +70,13 @@ const Contact = () => {
     return (
         <main className="min-h-screen bg-background pt-20">
             {/* Contact Hero Section */}
-            <section className="relative isolate flex flex-col justify-center items-center overflow-hidden py-16 md:py-24 bg-background px-4 sm:px-6 lg:px-8 border-b border-white/5">
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Grid */}
-                    <div className="absolute inset-0 opacity-[0.03] radial-grid-pattern" />
-
-                    {/* Glow Blobs */}
-                    <motion.div
-                        animate={{
-                            x: [0, 30, 0],
-                            y: [0, 20, 0],
-                            scale: [1, 1.05, 1],
-                        }}
-                        transition={{
-                            duration: 15,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                        className="absolute -left-32 -top-32 h-100 w-100 rounded-full bg-primary/10 blur-[130px]"
-                    />
-
-                    <motion.div
-                        animate={{
-                            x: [0, -30, 0],
-                            y: [0, -25, 0],
-                            scale: [1, 1.08, 1],
-                        }}
-                        transition={{
-                            duration: 18,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                        className="absolute -right-20 top-[20%] h-80 w-80 rounded-full bg-purple-600/10 blur-[120px]"
-                    />
-
-                    {/* Rotating Rings */}
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <div className="ring ring-1"></div>
-                        <div className="ring ring-2"></div>
-                        <div className="ring ring-3"></div>
-                        <div className="ring ring-4"></div>
-                    </div>
-
-                    {/* Particles */}
-                    <div className="absolute inset-0">
-                        {particles.map((particle) => (
-                            <motion.span
-                                key={particle.id}
-                                className="absolute rounded-full bg-cyan-300"
-                                style={{
-                                    width: particle.size,
-                                    height: particle.size,
-                                    left: particle.left,
-                                    top: particle.top,
-                                    opacity: 0.35,
-                                }}
-                                animate={{
-                                    y: [0, -20, 0],
-                                    opacity: [0.2, 0.6, 0.2],
-                                }}
-                                transition={{
-                                    duration: particle.duration,
-                                    repeat: Infinity,
-                                    delay: particle.delay,
-                                    ease: "easeInOut",
-                                }}
-                            />
-                        ))}
-                    </div>
-
-                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
-                </div>
-
-                <div className="container-width relative z-10 w-full text-center flex flex-col items-center">
-                    <motion.span
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="section-badge mb-5">
-                        Get In Touch
-                    </motion.span>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.15] text-white max-w-3xl">
-                        Let's Build Something <br />
-                        <span className="gradient-text">Great Together</span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="section-description max-w-xl mx-auto mt-4 text-center">
-                        Have an idea or a project roadmap? Contact our
-                        engineering team for technical consults, feasibility
-                        evaluations, and custom software quotes.
-                    </motion.p>
-                </div>
-            </section>
+            <PageHero
+                badge="Get In Touch"
+                title="Let's Build Something"
+                highlight="Great Together"
+                description="Have an idea or a project roadmap? Contact our engineering team for technical consults, feasibility evaluations, and custom software quotes."
+                glow="purple"
+            />
 
             {/* Split Content Section */}
             <section className="section-padding bg-background relative overflow-hidden">
@@ -202,8 +100,8 @@ const Contact = () => {
                                                 Our Address
                                             </h4>
                                             <p className="text-xs text-text-secondary mt-1">
-                                                100 Innovation Way, Tech
-                                                District, Suite 500
+                                                123 Innovation Boulevard,
+                                                Shahrah-e-Faisal, Karachi
                                             </p>
                                         </div>
                                     </div>
@@ -216,9 +114,11 @@ const Contact = () => {
                                             <h4 className="text-sm font-semibold text-white">
                                                 Email Us
                                             </h4>
-                                            <p className="text-xs text-text-secondary mt-1">
-                                                hello@codecelix.com
-                                            </p>
+                                            <a
+                                                href="mailto:hello@glassbloom.com"
+                                                className="block py-1 text-xs text-text-secondary transition-colors duration-300 hover:text-primary">
+                                                hello@glassbloom.com
+                                            </a>
                                         </div>
                                     </div>
 
@@ -230,9 +130,11 @@ const Contact = () => {
                                             <h4 className="text-sm font-semibold text-white">
                                                 Call Us
                                             </h4>
-                                            <p className="text-xs text-text-secondary mt-1">
-                                                +1 (555) 019-2834
-                                            </p>
+                                            <a
+                                                href="tel:+923001234567"
+                                                className="block py-1 text-xs text-text-secondary transition-colors duration-300 hover:text-primary">
+                                                +92 (300) 123-4567
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -426,14 +328,12 @@ const Contact = () => {
             {/* Accordion FAQ Section */}
             <section className="section-padding bg-surface border-y border-white/5 relative overflow-hidden">
                 <div className="container-width">
-                    <div className="section-header text-center flex flex-col items-center mb-12 md:mb-14">
-                        <span className="section-badge mb-4">FAQ</span>
-
-                        <h2 className="section-title mt-3 text-white">
-                            Frequently Asked{" "}
-                            <span className="gradient-text">Questions</span>
-                        </h2>
-                    </div>
+                    <SectionHeader
+                        badge="FAQ"
+                        title="Frequently Asked"
+                        highlight="Questions"
+                        className="mb-12 md:mb-14"
+                    />
 
                     <div className="max-w-3xl mx-auto mt-12 space-y-4">
                         {faqItems.map((item, idx) => {

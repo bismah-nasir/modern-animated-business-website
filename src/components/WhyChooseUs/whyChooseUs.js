@@ -14,7 +14,7 @@ export const whyChooseUs = [
         title: "Experienced Team",
 
         description:
-            "50+ skilled engineers, designers, and strategists with deep expertise across industries.",
+            "35+ skilled engineers, designers, and strategists with deep expertise across industries.",
     },
 
     {
