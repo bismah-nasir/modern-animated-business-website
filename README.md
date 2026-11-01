@@ -1,6 +1,6 @@
-# Codecelix — Modern Animated Business & Tech Agency Website
+# Glassbloom — Modern Animated Business & Tech Agency Website
 
-Codecelix is a premium, highly-interactive Single Page Application (SPA) designed for modern technology agencies and digital consultancies. It is built using **React 19**, **Vite 8**, **Tailwind CSS v4**, and **Framer Motion**, featuring custom glassmorphism components, floating particle/ring backgrounds, and smooth scroll restoration.
+Glassbloom is a premium, highly-interactive Single Page Application (SPA) designed for modern technology agencies and digital consultancies. It is built using **React 19**, **Vite 8**, **Tailwind CSS v4**, and **Framer Motion**, featuring custom glassmorphism components, floating particle/ring backgrounds, and smooth scroll restoration.
 
 ---
 
@@ -48,20 +48,25 @@ Codecelix is a premium, highly-interactive Single Page Application (SPA) designe
 The project follows a modular, self-contained component design architecture:
 
 ```
-modern-animated-business-website/
+glassbloom/
 ├── public/
 ├── src/
 │   ├── assets/
 │   ├── components/
 │   │   ├── About/          # About page logic & team dataset
+│   │   ├── Background/     # Shared animated background effects
 │   │   ├── CTA/            # Reusable Call to Action banner
 │   │   ├── Companies/      # Brand client sliding marquee
 │   │   ├── Contact/        # Contact forms, grayscale maps, FAQs
 │   │   ├── Footer/         # Responsive footer links & newsletter
 │   │   ├── Hero/           # Animating main splash header
 │   │   ├── Home/           # Homepage wrapper layout
+│   │   ├── Logo/           # Glassbloom SVG brand mark
 │   │   ├── Navbar/         # Client routes navbar with mobile drawer
+│   │   ├── NotFound/       # 404 page for unknown routes
+│   │   ├── PageHero/       # Shared animated header for inner pages
 │   │   ├── Portfolio/      # Project database & responsive grid cards
+│   │   ├── SectionHeader/  # Shared section badge, title & description
 │   │   ├── Services/       # Services listing & service cards
 │   │   ├── Stats/          # Track record numeric counter grid
 │   │   ├── Testimonials/   # Client feedback slide panels

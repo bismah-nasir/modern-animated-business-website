@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -7,8 +8,8 @@ import {
     services,
     socialLinks,
     contactInfo,
-    legalLinks,
 } from "./footer";
+import Logo from "../Logo/Logo";
 
 const containerVariants = {
     hidden: {},
@@ -35,6 +36,14 @@ const itemVariants = {
 };
 
 const Footer = () => {
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleNewsletterSubmit = (e) => {
+        e.preventDefault();
+        setIsSubscribed(true);
+        e.target.reset();
+    };
+
     return (
         <footer className="relative overflow-hidden bg-background">
             <div className="h-px w-full footer-gradient" />
@@ -49,11 +58,7 @@ const Footer = () => {
                         variants={itemVariants}
                         className="lg:col-span-1">
                         <Link to="/" className="group flex items-center gap-3">
-                            <div className="gradient-primary flex h-11 w-11 items-center justify-center rounded-xl transition-default glow-primary group-hover:scale-105">
-                                <span className="text-lg font-bold text-white">
-                                    C
-                                </span>
-                            </div>
+                            <Logo className="h-11 w-11 transition-default group-hover:scale-105 group-hover:rotate-[36deg]" />
 
                             <span className="text-xl font-bold tracking-tight text-text-primary">
                                 {footerContent.companyName}
@@ -146,7 +151,7 @@ const Footer = () => {
                                         </div>
 
                                         <div>
-                                            <p className="group text-text-secondary text-sm transition-colors duration-300 block hover:text-primaryF">
+                                            <p className="group text-text-secondary text-sm transition-colors duration-300 block hover:text-primary">
                                                 {item.value}
                                             </p>
                                         </div>
@@ -187,21 +192,33 @@ const Footer = () => {
                             </p>
                         </div>
 
-                        <form className="flex w-full max-w-md flex-col sm:flex-row">
-                            <input
-                                type="email"
-                                placeholder={
-                                    footerContent.newsletter.placeholder
-                                }
-                                className="bg-surface rounded-xl sm:rounded-r-none sm:rounded-l-xl border border-white/10 px-4 py-2.5 outline-none transition-all duration-300 w-full md:w-64 text-white text-sm placeholder:text-text-secondary focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
-                            />
+                        {isSubscribed ? (
+                            <p
+                                role="status"
+                                className="text-sm font-medium text-primary">
+                                {footerContent.newsletter.successMessage}
+                            </p>
+                        ) : (
+                            <form
+                                onSubmit={handleNewsletterSubmit}
+                                className="flex w-full max-w-md flex-col sm:flex-row">
+                                <input
+                                    type="email"
+                                    required
+                                    aria-label="Email address"
+                                    placeholder={
+                                        footerContent.newsletter.placeholder
+                                    }
+                                    className="bg-surface rounded-xl sm:rounded-r-none sm:rounded-l-xl border border-white/10 px-4 py-2.5 outline-none transition-all duration-300 w-full md:w-64 text-white text-sm placeholder:text-text-secondary focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
+                                />
 
-                            <button
-                                type="submit"
-                                className="bg-primary hover:bg-accent-light rounded-xl sm:rounded-l-none sm:rounded-r-xl px-6 py-2.5 text-white text-sm font-medium transition-opacity duration-200 whitespace-nowrap cursor-pointer mt-2 sm:mt-0">
-                                {footerContent.newsletter.buttonText}
-                            </button>
-                        </form>
+                                <button
+                                    type="submit"
+                                    className="bg-primary hover:bg-accent-light rounded-xl sm:rounded-l-none sm:rounded-r-xl px-6 py-2.5 text-white text-sm font-medium transition-opacity duration-200 whitespace-nowrap cursor-pointer mt-2 sm:mt-0">
+                                    {footerContent.newsletter.buttonText}
+                                </button>
+                            </form>
+                        )}
                     </div>
                 </motion.div>
 
@@ -209,22 +226,9 @@ const Footer = () => {
                 <motion.div
                     variants={itemVariants}
                     className="mt-8 pt-8 border-t border-white/10">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                        <p className="text-sm text-slate-500">
-                            {footerContent.copyright}
-                        </p>
-
-                        <div className="flex items-center gap-6">
-                            {legalLinks.map((link) => (
-                                <Link
-                                    key={link.title}
-                                    to={link.href}
-                                    className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-300">
-                                    {link.title}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
+                    <p className="text-center text-sm text-slate-500">
+                        {footerContent.copyright}
+                    </p>
                 </motion.div>
             </motion.div>
         </footer>

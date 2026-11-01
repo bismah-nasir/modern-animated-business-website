@@ -31,7 +31,7 @@ export const services = [
     },
     {
         title: "Mobile Apps",
-        href: "/services#mobile-apps",
+        href: "/services#mobile-development",
     },
     {
         title: "AI & Automation",
@@ -74,8 +74,8 @@ export const contactInfo = [
     {
         icon: Mail,
         label: "Email",
-        value: "hello@codecelix.com",
-        href: "mailto:hello@codecelix.com",
+        value: "hello@glassbloom.com",
+        href: "mailto:hello@glassbloom.com",
     },
     {
         icon: Phone,
@@ -91,23 +91,8 @@ export const contactInfo = [
     },
 ];
 
-export const legalLinks = [
-    {
-        title: "Privacy Policy",
-        href: "/privacy",
-    },
-    {
-        title: "Terms of Service",
-        href: "/terms",
-    },
-    {
-        title: "Cookies",
-        href: "/cookies",
-    },
-];
-
 export const footerContent = {
-    companyName: "Codecelix",
+    companyName: "Glassbloom",
 
     description:
         "We craft premium digital experiences that elevate brands and drive results. From cutting-edge web applications to intelligent automation, we turn ambitious ideas into reality.",
@@ -118,7 +103,8 @@ export const footerContent = {
             "Get the latest insights, updates, and resources delivered straight to your inbox.",
         placeholder: "Enter your email",
         buttonText: "Subscribe",
+        successMessage: "Thanks for subscribing! We'll be in touch soon.",
     },
 
-    copyright: `© ${new Date().getFullYear()} Codecelix. All rights reserved.`,
+    copyright: `© ${new Date().getFullYear()} Glassbloom. All rights reserved.`,
 };

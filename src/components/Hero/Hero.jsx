@@ -1,16 +1,42 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImg from "../../assets/hero-image.png";
+import heroImg from "../../assets/hero-image.webp";
 import { ArrowRight, Mouse, ChevronDown } from "lucide-react";
 
-const particles = Array.from({ length: 24 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    duration: 6 + Math.random() * 8,
-    delay: Math.random() * 5,
-    size: 2 + Math.random() * 3,
-}));
+import {
+    GridPattern,
+    GlowBlob,
+    FloatingRings,
+    FloatingParticles,
+    BottomFade,
+} from "../Background/BackgroundEffects.jsx";
+
+// Background glows: three drifting blobs and a pulsing center light
+const heroGlows = [
+    {
+        className: "-left-32 -top-32 h-130 w-130 bg-primary/15 blur-[140px]",
+        animate: { x: [0, 40, 0], y: [0, 30, 0], scale: [1, 1.08, 1] },
+        duration: 18,
+    },
+    {
+        className:
+            "-right-25 top-[10%] h-80 w-80 bg-purple-600/15 blur-[140px]",
+        animate: { x: [0, -40, 0], y: [0, -35, 0], scale: [1, 1.1, 1] },
+        duration: 22,
+    },
+    {
+        className:
+            "-bottom-55 left-1/3 h-130 w-130 bg-primary-light/10 blur-[150px]",
+        animate: { x: [0, 20, 0], y: [0, -30, 0], scale: [1, 1.05, 1] },
+        duration: 20,
+    },
+    {
+        className:
+            "left-1/2 top-1/2 h-75 w-75 -translate-x-1/2 -translate-y-1/2 bg-primary-light/10 blur-[120px]",
+        animate: { opacity: [0.4, 0.8, 0.4], scale: [1, 1.1, 1] },
+        duration: 8,
+    },
+];
 
 const floatingCards = [
     {
@@ -41,112 +67,24 @@ const Hero = () => {
         <section className="relative isolate flex flex-col justify-center items-center overflow-hidden h-auto min-h-screen lg:h-screen bg-background px-4 sm:px-6 lg:px-8">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Grid */}
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage:
-                            "radial-gradient(circle, white 1px, transparent 1px)",
-                        backgroundSize: "42px 42px",
-                    }}
+                <GridPattern />
+
+                {heroGlows.map((glow) => (
+                    <GlowBlob key={glow.className} {...glow} />
+                ))}
+
+                <FloatingRings />
+
+                <FloatingParticles
+                    count={24}
+                    duration={[6, 14]}
+                    maxDelay={5}
+                    size={[2, 5]}
+                    rise={25}
+                    opacity={[0.25, 0.7]}
                 />
 
-                {/* Top Left Blob */}
-                <motion.div
-                    animate={{
-                        x: [0, 40, 0],
-                        y: [0, 30, 0],
-                        scale: [1, 1.08, 1],
-                    }}
-                    transition={{
-                        duration: 18,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute -left-32 -top-32 h-130 w-130 rounded-full bg-primary/15 blur-[140px]"
-                />
-
-                {/* Right Blob */}
-                <motion.div
-                    animate={{
-                        x: [0, -40, 0],
-                        y: [0, -35, 0],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 22,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute -right-25 top-[10%] h-80 w-80 rounded-full bg-purple-600/15 blur-[140px]"
-                />
-
-                {/* Bottom Blob */}
-                <motion.div
-                    animate={{
-                        x: [0, 20, 0],
-                        y: [0, -30, 0],
-                        scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute -bottom-55 left-1/3 h-130 w-130 rounded-full bg-primary-light/10 blur-[150px]"
-                />
-
-                {/* Center Glow */}
-                <motion.div
-                    animate={{
-                        opacity: [0.4, 0.8, 0.4],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute left-1/2 top-1/2 h-75 w-75 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-light/10 blur-[120px]"
-                />
-
-                {/* Rotating Rings */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="ring ring-1"></div>
-                    <div className="ring ring-2"></div>
-                    <div className="ring ring-3"></div>
-                    <div className="ring ring-4"></div>
-                </div>
-
-                {/* Floating Particles */}
-                <div className="absolute inset-0">
-                    {particles.map((particle) => (
-                        <motion.span
-                            key={particle.id}
-                            className="absolute rounded-full bg-cyan-300"
-                            style={{
-                                width: particle.size,
-                                height: particle.size,
-                                left: particle.left,
-                                top: particle.top,
-                                opacity: 0.45,
-                            }}
-                            animate={{
-                                y: [0, -25, 0],
-                                opacity: [0.25, 0.7, 0.25],
-                            }}
-                            transition={{
-                                duration: particle.duration,
-                                repeat: Infinity,
-                                delay: particle.delay,
-                                ease: "easeInOut",
-                            }}
-                        />
-                    ))}
-                </div>
-
-                {/* Bottom Fade */}
-                <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
+                <BottomFade />
             </div>
 
             <div className="container-width relative z-10 w-full py-12 lg:py-0">
@@ -161,7 +99,7 @@ const Hero = () => {
                         <motion.span
                             whileHover={{ scale: 1.03 }}
                             transition={{ duration: 0.2 }}
-                            className="mb-4 self-center lg:self-start inline-flex items-center rounded-full border border-primary-light/30 bg-primary-light/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light backdrop-blur-xs">
+                            className="section-badge mb-4 self-center lg:self-start backdrop-blur-xs">
                             AI Powered Digital Agency
                         </motion.span>
 
@@ -245,7 +183,7 @@ const Hero = () => {
                                 className="overflow-hidden">
                                 <motion.img
                                     src={heroImg}
-                                    alt="Codecelix Hero"
+                                    alt="Glassbloom Hero"
                                     className="h-full w-full object-cover max-h-105 lg:max-h-120"
                                     animate={{
                                         scale: [1, 1.02, 1],

@@ -11,7 +11,7 @@ const Companies = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-center text-md uppercase tracking-widest text-slate-500 mb-8">
+                        className="text-center text-base uppercase tracking-widest text-slate-500 mb-8">
                         Trusted by innovative companies worldwide
                     </motion.p>
                 </div>

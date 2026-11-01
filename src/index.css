@@ -280,13 +280,13 @@
         transition: all 0.3s ease;
     }
 
-    .ring {
+    .hero-ring {
         position: absolute;
         border-radius: 9999px;
         animation: ringFloat linear infinite;
     }
 
-    .ring-1 {
+    .hero-ring-1 {
         top: 15%;
         left: 8%;
         width: 120px;
@@ -298,7 +298,7 @@
         animation-duration: 18s;
     }
 
-    .ring-2 {
+    .hero-ring-2 {
         top: 52%;
         left: 5%;
         width: 70px;
@@ -311,7 +311,7 @@
         animation-direction: reverse;
     }
 
-    .ring-3 {
+    .hero-ring-3 {
         top: 22%;
         right: 12%;
         width: 90px;
@@ -323,7 +323,7 @@
         animation-duration: 20s;
     }
 
-    .ring-4 {
+    .hero-ring-4 {
         bottom: 22%;
         left: 52%;
         width: 110px;

@@ -1,12 +1,4 @@
-import {
-    Globe,
-    Smartphone,
-    Bot,
-    Palette,
-    TrendingUp,
-    Check,
-    ArrowRight,
-} from "lucide-react";
+import { Globe, Smartphone, Bot, Palette, TrendingUp } from "lucide-react";
 
 export const services = [
     {
@@ -43,7 +35,7 @@ export const services = [
             "AWS",
         ],
 
-        href: "#web-development",
+        slug: "web-development",
     },
 
     {
@@ -80,7 +72,7 @@ export const services = [
             "GraphQL",
         ],
 
-        href: "#mobile-development",
+        slug: "mobile-development",
     },
 
     {
@@ -117,7 +109,7 @@ export const services = [
             "Docker",
         ],
 
-        href: "#ai-automation",
+        slug: "ai-automation",
     },
 
     {
@@ -154,7 +146,7 @@ export const services = [
             "Hotjar",
         ],
 
-        href: "#ui-ux-design",
+        slug: "ui-ux-design",
     },
 
     {
@@ -191,11 +183,6 @@ export const services = [
             "HubSpot",
         ],
 
-        href: "#digital-marketing",
+        slug: "digital-marketing",
     },
 ];
-
-export const serviceIcons = {
-    Check,
-    ArrowRight,
-};

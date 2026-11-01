@@ -2,53 +2,36 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
+import { GlowBlob, BottomFade } from "../Background/BackgroundEffects.jsx";
+
+// Background glows: two drifting side lights and a pulsing center light
+const ctaGlows = [
+    {
+        className: "-left-32 top-10 h-96 w-96 bg-primary/15 blur-[130px]",
+        animate: { x: [0, 30, 0], y: [0, 20, 0], scale: [1, 1.05, 1] },
+        duration: 16,
+    },
+    {
+        className: "-right-32 top-16 h-80 w-80 bg-accent/15 blur-[120px]",
+        animate: { x: [0, -25, 0], y: [0, -20, 0], scale: [1, 1.06, 1] },
+        duration: 18,
+    },
+    {
+        className:
+            "left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 bg-primary/10 blur-[110px]",
+        animate: { opacity: [0.25, 0.55, 0.25], scale: [1, 1.08, 1] },
+        duration: 8,
+    },
+];
+
 const CTA = () => {
     return (
         <section className="relative overflow-hidden py-12 md:py-16 bg-background">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Left Glow */}
-                <motion.div
-                    animate={{
-                        x: [0, 30, 0],
-                        y: [0, 20, 0],
-                        scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                        duration: 16,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-primary/15 blur-[130px]"
-                />
-
-                {/* Right Glow */}
-                <motion.div
-                    animate={{
-                        x: [0, -25, 0],
-                        y: [0, -20, 0],
-                        scale: [1, 1.06, 1],
-                    }}
-                    transition={{
-                        duration: 18,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute -right-32 top-16 h-80 w-80 rounded-full bg-accent/15 blur-[120px]"
-                />
-
-                {/* Center Glow */}
-                <motion.div
-                    animate={{
-                        opacity: [0.25, 0.55, 0.25],
-                        scale: [1, 1.08, 1],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                    }}
-                    className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[110px]"
-                />
+                {ctaGlows.map((glow) => (
+                    <GlowBlob key={glow.className} {...glow} />
+                ))}
 
                 {/* Radial Highlight */}
                 <div
@@ -59,8 +42,7 @@ const CTA = () => {
                     }}
                 />
 
-                {/* Bottom Fade */}
-                <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
+                <BottomFade />
             </div>
 
             <div className="container-width relative z-10">
